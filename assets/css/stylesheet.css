@@ -14,7 +14,7 @@
 
 body {
     padding-top: 130px;
-    background-image: url('../img/deer.jpg');
+    background-image: url("../img/deer.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -83,25 +83,76 @@ form {
     background: #343a40;
 }
 
-/*faq page*/
+/*accordion*/
 
-.mb-0{
-    color: black;
+#accordion{
+    color: #000 !important;
+}
+
+.shippingMap{
+    height: 300px;
+    width: 500px;
+}
+
+.card-header{
+    color: #343a40;
 }
 
 /*table*/
 
 .table td{
-    border: black solid 1px !important;
+    border: black solid 1px;
 }
 
 .table th{
-    border: black solid 1px !important;
+    border: black solid 1px;
 }
 
 th{
     text-align: center;
 }
+
+.tableImage{
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+.tableImage:hover{
+    transform: scale(2);
+    transition: transform .2s;
+}
+
+table{
+    font-size: 25px;
+}
+
+tablePrice{
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*cards*/
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: auto;
+    justify-content: space-between;
+}
+
+.card-img-top{
+    height: 200px;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-text{
+    font-size: 20px;
+}
+
 
 
 

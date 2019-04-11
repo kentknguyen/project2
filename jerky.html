@@ -24,11 +24,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="frozen.html">Frozen Meats</a>
-                                <a class="dropdown-item" href="gift.html">Gifts</a>
-                                <a class="dropdown-item" href="specialty.html">Specialty Items</a>
                                 <a class="dropdown-item" href="jerky.html">Jerky</a>
-                                <a class="dropdown-item" href="dog.html">Dog Items</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="sales.html">SALE!</a>
                             </div>
@@ -66,36 +62,77 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"><img src="../assets/img/originaljerky.jpg">Original</th>
-                                <td>$7.95</td>
+                                <th scope="row"><img src="assets/img/originaljerky.jpg" class="tableImage">Original</th>
+                                <td class="tablePrice">$7.95/2oz.</td>
                                 <td>
-                                    <p class="description"></p>
-                                    <input type="text" id="quantity">
+                                    <select id="quantityOriginal">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
                                 </td>
-                                <td id="total"></td>
+                                <td>
+                                    <p id="totalOriginal"></p>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row"><img src="../assets/img/pepperplanks.jpg">Pepper Plank</th>
-                                <td>$7.95</td>
+                                <th scope="row"><img src="assets/img/pepperplanks.jpg" class="tableImage">Pepper Plank</th>
+                                <td class="tablePrice">$7.95/2oz.</td>
                                 <td>
-                                    <p class="description"></p>
-                                    <input type="text" id="quantity">
+                                    <select id="quantityPepper">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
                                 </td>
-                                <td id="total"></td>
+                                <td>
+                                    <p id="totalPepper"></p>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row"><img src="../assets/img/sweetspicy.jpg">Sweet and Spicy</th>
-                                <td>$7.95</td>
+                                <th scope="row"><img src="assets/img/sweetspicy.jpg" class="tableImage">Sweet and Spicy</th>
+                                <td class="tablePrice">$7.95/2oz.</td>
                                 <td>
-                                    <p class="description"></p>
-                                    <input type="text" id="quantity">
+                                    <select id="quantitySweet">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
                                 </td>
-                                <td id="total"></td>
+                                <td>
+                                    <p id="totalSweet"></p>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
-                    <input type="button" value="Get Total">
-                    <input type="reset" value="Reset">
+                    <p id=subTotal>
+                        Subtotal:
+                    </p>
+                    <input type="submit" value="Order Now" id=submit>
                 </div>
             </div>
         </div>
@@ -104,18 +141,44 @@
         </footer>
     </div>
     <script>
-        var quantity = document.getElementById('quantity');
-        var total = document.getElementById('total');
-        var btnTotal = document.querySelector("input[type=button]");
-        var btnReset = document.querySelector("input[type=reset]");
+        function originalTotal() {
+            var originalPrice = 7.95;
+            oq = document.getElementById('quantityOriginal').value;
+            full = '$' + (originalPrice * oq).toFixed(2);
+        };
 
-        quantity.addEventListener("change", calc);
-        btnReset.addEventListener("click", reset);
-        btnTotal.addEventListener("click", getTotal);
-        
-        var totalRow=null;
-        
-        
+        document.getElementById('quantityOriginal').onchange = function() {
+            originalTotal();
+            document.getElementById('totalOriginal').innerHTML = full;
+        }
+
+        function pepperTotal() {
+            var pepperPrice = 7.95;
+            pq = document.getElementById('quantityPepper').value;
+            full = '$' + (pepperPrice * pq).toFixed(2);
+        };
+
+        document.getElementById('quantityPepper').onchange = function() {
+            pepperTotal();
+            document.getElementById('totalPepper').innerHTML = full;
+        };
+
+        function sweetTotal() {
+            var sweetPrice = 7.95;
+            sq = document.getElementById('quantitySweet').value;
+            full = '$' + (sweetPrice * sq).toFixed(2);
+        };
+
+        document.getElementById('quantitySweet').onchange = function() {
+            sweetTotal();
+            document.getElementById('totalSweet').innerHTML = full;
+        };
+
+        function total() {
+            var result = Number(originalTotal()) + Number(pepperTotal()) + Number(sweetTotal());
+            document.getElementById('subTotal').innerHTML
+        }
+
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
