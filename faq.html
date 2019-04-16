@@ -25,7 +25,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="jerky.html">Jerky</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="sales.html">SALE!</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#saleModal">SALE!</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -44,6 +44,32 @@
                     </ul>
                 </div>
             </nav>
+            <div class="modal fade" id="saleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">SALE!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            APRIL BISON CHUCK SALE! Buy $150, all Buffalo items marked "CHUCK" are ON SALE @ 20% OFF until 11:59 PM April 30, 2019. Use Promo Code "BUFFCK" when directed.
+                        </div>
+                        <hr>
+                        <div class="modal-body">
+                            APRIL GOAT SALE! Buy $100 and all GOAT items are ON SALE @ 20% OFF until 11:59 PM April 30, 2019. Use Promo Code "GOAT419" when directed.
+                        </div>
+                        <hr>
+                        <div class="modal-body">
+                            APRIL ELK RUMP SALE! Buy $125 and all Elk Rump items marked "RUMP" are ON SALE @ 10% OFF until 11:59 PM April 30, 2019. Use Promo Code "ELK10" when directed.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
         <div class="jumbotron jumbotron-fluid">
             <div class="container-fluid">

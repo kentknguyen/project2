@@ -26,7 +26,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="jerky.html">Jerky</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="sales.html">SALE!</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#saleModal">SALE!</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -45,6 +45,32 @@
                     </ul>
                 </div>
             </nav>
+            <div class="modal fade" id="saleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">SALE!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            APRIL BISON CHUCK SALE! Buy $150, all Buffalo items marked "CHUCK" are ON SALE @ 20% OFF until 11:59 PM April 30, 2019. Use Promo Code "BUFFCK" when directed.
+                        </div>
+                        <hr>
+                        <div class="modal-body">
+                            APRIL GOAT SALE! Buy $100 and all GOAT items are ON SALE @ 20% OFF until 11:59 PM April 30, 2019. Use Promo Code "GOAT419" when directed.
+                        </div>
+                        <hr>
+                        <div class="modal-body">
+                            APRIL ELK RUMP SALE! Buy $125 and all Elk Rump items marked "RUMP" are ON SALE @ 10% OFF until 11:59 PM April 30, 2019. Use Promo Code "ELK10" when directed.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
         <div class="jumbotron jumbotron-fluid">
             <div>
@@ -132,7 +158,7 @@
                     <p id=subTotal>
                         Subtotal:
                     </p>
-                    <input type="submit" value="Order Now" id=submit>
+                    <button id="submit">Order Now</button>
                 </div>
             </div>
         </div>
@@ -141,44 +167,47 @@
         </footer>
     </div>
     <script>
-        function originalTotal() {
-            var originalPrice = 7.95;
-            oq = document.getElementById('quantityOriginal').value;
-            full = '$' + (originalPrice * oq).toFixed(2);
+        var price = 7.95;
+
+        var oq = document.getElementById('quantityOriginal');
+        var pq = document.getElementById('quantityPepper');
+        var sq = document.getElementById('quantitySweet');
+
+        function calcOriginal() {
+            calcO = '$' + (price * oq.value).toFixed(2);
         };
 
         document.getElementById('quantityOriginal').onchange = function() {
-            originalTotal();
-            document.getElementById('totalOriginal').innerHTML = full;
-        }
+            calcOriginal();
+            document.getElementById('totalOriginal').innerHTML = calcO;
+        };
 
-        function pepperTotal() {
-            var pepperPrice = 7.95;
-            pq = document.getElementById('quantityPepper').value;
-            full = '$' + (pepperPrice * pq).toFixed(2);
+        function calcPepper() {
+            calcP = '$' + (price * pq.value).toFixed(2);
         };
 
         document.getElementById('quantityPepper').onchange = function() {
-            pepperTotal();
-            document.getElementById('totalPepper').innerHTML = full;
+            calcPepper();
+            document.getElementById('totalPepper').innerHTML = calcP;
         };
 
-        function sweetTotal() {
-            var sweetPrice = 7.95;
-            sq = document.getElementById('quantitySweet').value;
-            full = '$' + (sweetPrice * sq).toFixed(2);
+        function calcSweet() {
+            calcS = '$' + (price * sq.value).toFixed(2);
         };
 
         document.getElementById('quantitySweet').onchange = function() {
-            sweetTotal();
-            document.getElementById('totalSweet').innerHTML = full;
+            calcSweet();
+            document.getElementById('totalSweet').innerHTML = calcS;
         };
 
-        function total() {
-            var result = Number(originalTotal()) + Number(pepperTotal()) + Number(sweetTotal());
-            document.getElementById('subTotal').innerHTML
-        }
+        function calcSubTotal() {
+            calcSub = 'Sub Total: $' + ((price * oq.value) + (price * pq.value) + (price * sq.value)).toFixed(2);
+        };
 
+        document.getElementById('submit').onclick = function() {
+            calcSubTotal();
+            document.getElementById('subTotal').innerHTML = calcSub;
+        };
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
