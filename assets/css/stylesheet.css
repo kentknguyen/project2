@@ -12,6 +12,8 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+/*body*/
+
 body {
     padding-top: 130px;
     background-image: url("../img/deer.jpg");
@@ -63,12 +65,11 @@ form {
     text-align: center;
 }
 
-/*body*/
 .container {
     z-index: 1;
 }
 
-.overlay{
+.overlay {
     text-align: center;
 }
 
@@ -85,79 +86,74 @@ form {
 
 /*accordion*/
 
-#accordion{
+#accordion {
     color: #000 !important;
 }
 
-.shippingMap{
+.shippingMap {
     height: 300px;
     width: 500px;
 }
 
-.card-header{
+.card-header {
     color: #343a40;
 }
 
 /*table*/
 
-.table td{
+.table td {
     border: black solid 1px;
 }
 
-.table th{
+.table th {
     border: black solid 1px;
 }
 
-th{
+th {
     text-align: center;
+    height: 50px;
+    width: 40px;
+    margin: 0px;
+    padding: 0px;
 }
 
-.tableImage{
+.tableImage {
     height: 100px;
     width: 100px;
     display: block;
     margin: auto;
 }
 
-.tableImage:hover{
+.tableImage:hover {
     transform: scale(2);
     transition: transform .2s;
 }
 
-table{
+table {
     font-size: 25px;
 }
 
-tablePrice{
+tablePrice {
     text-align: center;
     vertical-align: middle;
 }
 
 /*cards*/
 
-.card{
+.card {
     display: flex;
     flex-wrap: wrap;
     flex-basis: auto;
     justify-content: space-between;
 }
 
-.card-img-top{
+.card-img-top {
     height: 200px;
     width: 300px;
     display: block;
     margin: 0 auto;
 }
 
-.card-text{
+.card-text {
     font-size: 20px;
 }
-
-
-
-
-
-
-
-
-
