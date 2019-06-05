@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {}
+
+/*presets*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 5px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*body*/
+
+body {
+    padding-top: 130px;
+    background-image: url("../img/deer.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header img {
+    width: 100px;
+    height: 60px;
+    padding: 0px;
+}
+
+.jumbotron {
+    opacity: 0.75;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    padding: 20px 20px 20px 20px;
+    display: inline-block;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    text-align: center;
+    font-size: 30px;
+}
+
+ul {
+    text-align: center padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+li {
+    padding: 0px;
+    margin: 0px;
+}
+
+form {
+    text-align: center;
+}
+
+.container {
+    z-index: 1;
+}
+
+.overlay {
+    text-align: center;
+}
+
+/*nav*/
+
+.navbar-nav {
+    font-size: 25px;
+}
+
+.dropdown-menu a:hover {
+    color: #FFF;
+    background: #343a40;
+}
+
+/*accordion*/
+
+#accordion {
+    color: #000 !important;
+}
+
+.shippingMap {
+    height: 300px;
+    width: 500px;
+}
+
+.card-header {
+    color: #343a40;
+}
+
+/*table*/
+
+.table td {
+    border: black solid 1px;
+}
+
+.table th {
+    border: black solid 1px;
+}
+
+th {
+    text-align: center;
+    height: 50px;
+    width: 40px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.tableImage {
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+.tableImage:hover {
+    transform: scale(2);
+    transition: transform .2s;
+}
+
+table {
+    font-size: 25px;
+}
+
+tablePrice {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*cards*/
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: auto;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    height: 200px;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-text {
+    font-size: 20px;
+}
